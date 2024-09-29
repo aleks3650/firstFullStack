@@ -6,6 +6,7 @@ import FormAddNew from "./components/FormAddNew";
 
 const Program = () => {
   const { data: info, isLoading } = useQuery(dataHook);
+  console.log(process.env.NODE_ENV);
 
   return (
     <div className="w-full mx-auto p-2 bg-zinc-200 min-h-[100vh]">
