@@ -5,9 +5,10 @@ import productRoutes from "./routes/products.route.js";
 import cors from "cors";
 import path from "path";
 
-const __dirname = path.resolve();
-const app = express();
 dotenv.config();
+const __dirname = path.resolve();
+const PORT = process.env.PORT || 5000;
+const app = express();
 
 app.use(cors());
 
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   connectDB();
-  console.log("server is runs");
+  console.log("server is runs oon", PORT);
 });
